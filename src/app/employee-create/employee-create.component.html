@@ -1,0 +1,86 @@
+<div class="container custom-container">
+    <div class="col-md-12">
+        <h3 class="mb-3 text-center">Create Employee</h3>
+
+        <div class="form-group">
+            <label class="form-check-label" for="eid">Employee Id:</label>
+            <input type="text" ng-required="true" ng-minlength=5 [(ngModel)]="employeeDetails.eid" class="form-control"
+                placeholder="Enter EID">
+        </div>
+
+        <div class="form-group">
+            <label class="form-check-label" for="fname">First Name:</label>
+            <input type="text" ng-required="true" ng-minlength=5 [(ngModel)]="employeeDetails.fname"
+                class="form-control" placeholder="Enter First Name">
+        </div>
+        <div class="form-group">
+            <label class="form-check-label" for="fname">Last Name:</label>
+            <input type="text" [(ngModel)]="employeeDetails.lname" class="form-control" placeholder="Enter Last Name">
+        </div>
+        <div class="form-group">
+            <label class="form-check-label" for="fname">Age:</label>
+            <input type="text" [(ngModel)]="employeeDetails.age" class="form-control" placeholder="Enter Age">
+        </div>
+        <div class="form-group">
+            <label class="form-check-label" for="gender"> Gender: &nbsp;
+            </label>
+            <div class="form-check-inline">
+                <label class="form-check-label" for="male">
+                    <input type="radio" class="form-check-input" id="male" name="gender"
+                        [(ngModel)]="employeeDetails.gender" value="male" checked>Male
+                </label>
+            </div>
+
+            <div class="form-check-inline">
+                <label class="form-check-label" for="female">
+                    <input type="radio" class="form-check-input" id="female" name="gender"
+                        [(ngModel)]="employeeDetails.gender" value="female">Female
+
+                </label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-check-label" for="fname">Email:</label>
+            <input type="text" [(ngModel)]="employeeDetails.email" class="form-control" placeholder="Enter Email">
+        </div>
+
+
+        <div class="form-group">
+            <label class="form-check-label" for="fname">Password:</label>
+            <input type="text" [(ngModel)]="employeeDetails.password" class="form-control" placeholder="Enter Password">
+        </div>
+        <div class="form-group">
+            <label class="form-check-label" for="role"> Role: &nbsp;
+            </label>
+            <div class="form-check-inline">
+                <label class="form-check-label" for="employee">
+                    <input type="radio" class="form-check-input" id="employee" name="role"
+                        [(ngModel)]="employeeDetails.role" value="Employee" checked>Employee
+                </label>
+            </div>
+
+            <div class="form-check-inline">
+                <label class="form-check-label" for="manager">
+                    <input type="radio" class="form-check-input" id="manager" name="role"
+                        [(ngModel)]="employeeDetails.role" value="Manager">Manager
+
+                </label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-check-label" for="fname">Phone Number:</label>
+            <input type="text" [(ngModel)]="employeeDetails.phoneNumber" class="form-control"
+                placeholder="Enter Phone Number">
+        </div>
+        <div class="form-group">
+            <label class="form-check-label" for="fname">Address:</label>
+            <input type="text" [(ngModel)]="employeeDetails.address" class="form-control" placeholder="Enter Address">
+        </div>
+
+        <div class="form-group">
+            <button class="btn btn-success btn-lg btn-block" (click)="addEmployee()">Create
+                Employee</button>
+        </div>
+
+    </div>
+</div>
