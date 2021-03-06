@@ -1,0 +1,42 @@
+<div class="container custom-container">
+    <div class="col-md-12">
+        <h3 class="mb-3 text-center">Apply Leave</h3>
+
+        <div class="form-group">
+            <input type="text" ng-required="true" ng-minlength=5 [(ngModel)]="leaveDetails.eid" class="form-control"
+                placeholder="EID">
+        </div>
+
+        <div class="form-group">
+            <input type="date" min="{{today}}" max="{{today}}" ng-required="true" [(ngModel)]="leaveDetails.fromDate"
+                class="form-control" placeholder="First Name">
+        </div>
+        <div class="form-group">
+            <input type="date" min="{{tillDate}}" max="{{tillDate}}" ng-required="true"
+                [(ngModel)]="leaveDetails.toDate" class="form-control" placeholder="First Name">
+        </div>
+        <div class="form-group">
+            <textarea [(ngModel)]="leaveDetails.leaveComment" class="form-control"
+                placeholder="leave a comment here (:">
+        </textarea>
+        </div>
+        <div class="form-group">
+            <select name="leaveType" [(ngModel)]="leaveDetails.leaveType">
+                <option value="EL">Earned Leave</option>
+                <option value="CL">Casual Leave</option>
+                <option value="LOP">Loss Of Pay</option>
+
+            </select>
+
+
+        </div>
+
+
+
+        <div class="form-group">
+            <button class="btn btn-success btn-lg btn-block" (click)="addLeave()">
+                Apply Leave</button>
+        </div>
+
+    </div>
+</div>
