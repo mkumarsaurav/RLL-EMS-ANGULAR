@@ -1,0 +1,15 @@
+<h2>Welcome : {{currentUserName}}</h2>
+<nav class="navbar navbar-dark bg-dark">
+
+
+    <button type="button" class="btn btn-primary btn-lg" (click)="addEmployee()">ADD
+        EMPLOYEE</button>
+    <button type="button" class="btn btn-secondary btn-lg" (click)="getEmployees()">View
+        Employee Details</button>
+    <button type="button" class="btn btn-secondary btn-lg" (click)="getLeave()" routerLink="getLeave" routerLinkActive="Active">View Leave
+        Details</button>
+    
+</nav>
+<div>
+<router-outlet></router-outlet>
+</div>
