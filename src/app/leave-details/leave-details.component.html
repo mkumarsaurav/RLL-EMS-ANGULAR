@@ -1,0 +1,60 @@
+
+<blockquote class="blockquote">
+    <p><b>Leave Details Submitted By Employees</b></p>
+  </blockquote>
+  <div class="container custom-container-2">
+  
+    <!-- Show it when there is no employee -->
+    <div class="no-data text-center" *ngIf="Leave.length == 0">
+      <p>There is no Leave applied Yet</p>
+      
+      <button class="btn btn-outline-primary" routerLink="/applyLeave">Apply Leave</button>
+    </div>
+  
+    <!-- Employees list table, it hides when there is no employee -->
+    <div *ngIf="Leave.length !== 0">
+      <h3 class="mb-3 text-center">Leave List</h3>
+  
+     
+   
+  
+  
+      <div class="col-md-12">
+        <table class="table table-warning">
+          <thead>
+            <tr>
+              <th scope="col">Leave Id</th>
+              <th scope="col">Leave Type</th>
+              <th scope="col">EId</th>
+              <th scope="col">Leave applied from </th>
+              <th scope="col">Leave applied till Date</th>
+              <th scope="col">Leave Status</th>
+              
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let leave of Leave">
+              <td>{{leave.leaveId}}</td>
+              <td>{{leave.leaveType}}</td>
+              <td>{{leave.eid}}</td>
+              <td>{{leave.fromDate | date}}</td>
+              <td>{{leave.toDate | date }}</td>
+              <td>{{leave.leaveStatus}}</td>
+              
+              
+             
+              <td>
+                <button class="approve" (click)="approveLeave(leave.leaveId)">Approve</button>
+                <button class="reject" (click)="rejectLeave(leave.leaveId)">
+                  Reject</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+  
+    </div>
+  
+  </div>
+  
