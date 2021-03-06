@@ -1,0 +1,23 @@
+<div class="wrapper fadeInDown">
+  <div class=" first" id="formContent">
+
+    <div class="fadeIn first">
+
+    </div>
+
+    <div>
+      User Name : <input type="text" id="login" class="fadeIn second" name="username" [(ngModel)]="username">
+      Password : <input type="text" id="password" class="fadeIn third" name="password" [(ngModel)]="password">
+    </div>
+    <button (click)="Login(username,password)" class="btn btn-success">
+      Login
+    </button>
+
+
+    <div id="formFooter">
+      <a class="underlineHover" href="#" onclick="alert('Contact Your Manager')">Forgot Password?</a>
+    </div>
+
+  </div>
+</div>
+<router-outlet></router-outlet>
