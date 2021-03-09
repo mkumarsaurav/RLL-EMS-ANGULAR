@@ -1,0 +1,87 @@
+<body>
+<header id="header" class="fixed-top">
+<div class="container d-flex align-items-center">
+
+  <h2 class="logo mr-auto"><a>Search Result</a></h2><br>
+
+  <nav class="nav-menu d-none d-lg-block">
+    <ul>
+      <li class="active"><a routerLink="/managerHome/1/2" routerLinkActive="active">Go Back</a></li>
+
+    </ul>
+  </nav><!-- .nav-menu -->
+
+</div>
+</header><!-- End Header -->
+<br><br><br><br><br>
+<hr style="color: black;">
+<div class="container custom-container-2">
+
+  <!-- Show it when there is no employee -->
+
+  <div align="center" class="no-data text-center" *ngIf="!(display)">
+    <div class="wrapper fadeInDown"  >
+      <div class=" first" id="formContent">
+        <div class="fadeIn first">
+          <h3>Oops!!</h3>
+        </div>
+        <div>
+          <h4>Employee not found...</h4>
+          <h4>Please enter valid Employee Id!!</h4>
+        </div>
+        <div>
+          <br><br>
+          <button class="btn btn-outline-primary" routerLink="/managerHome/1/2" routerLinkActive="active">Back</button>
+          <br><br><br>
+        </div>
+      </div>
+    </div>
+
+
+
+  </div>
+
+  <!-- Employees list table, it hides when there is no employee -->
+
+  <div *ngIf="display" align="center">
+    <br><br>
+    <!-- <h3 class="mb-3 text-center"></h3> -->
+
+    <div class="col-md-12">
+      <table class="table table-hover shadow-lg table-striped" id="tab">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Employee Id</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Age</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Email</th>
+            <th scope="col">Available-Leave</th>
+            <th scope="col">Role</th>
+            <th scope="col">Phone Number</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let employee of Employee">
+            <td>{{employee.eid}}</td>
+            <td>{{employee.fname}}</td>
+            <td>{{employee.lname}}</td>
+            <td>{{employee.age}}</td>
+            <td>{{employee.gender}}</td>
+            <td>{{employee.email}}</td>
+            <td>{{employee.availableLeave}}</td>
+            <td>{{employee.role}}</td>
+            <td>{{employee.phoneNumber}}</td>
+
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+
+</div>
+<router-outlet></router-outlet>
+</body>
