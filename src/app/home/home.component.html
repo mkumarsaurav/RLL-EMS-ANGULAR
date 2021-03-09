@@ -1,0 +1,73 @@
+<html>
+<title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</title>
+
+<body>
+
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo mr-auto"><a href="#">VAABS<span>.</span></a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo mr-auto"><img src="assets/img/logo.png" alt=""></a>-->
+
+      <nav class="nav-menu d-none d-lg-block">
+        <ul>
+          <li ><a routerLink="/home" routerLinkActive="active">Home</a></li>
+          <li><a routerLink="/aboutus" routerLinkActive="active">About</a></li>
+          <li><a >Team</a></li>
+          <li><a >Contact</a></li>
+          
+        </ul>
+      </nav><!-- .nav-menu -->
+
+    </div>
+  </header><!-- End Header -->
+
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+    <div class="container">
+      <h1>Welcome to <span>Vaabs</span>
+      </h1>
+      <h2>We are here to support companies by tracking employee leave</h2>
+     <h5>We are here to help you ... <br>Every employee is valuable !! Your health matters ...<br>
+       Apply for leave today :)</h5>
+      <div class="d-flex">
+        <a routerLink="/login" routerLinkActive="active" class="btn-get-started scrollto">Login</a>
+        
+      </div>
+    </div>
+  </section>
+  <!-- End Hero -->
+  
+  <div id="first" class="jumbotron jumbotron-fluid">
+    <div class="container custom-container-2">
+      <h3 class="mb-3 text-center">List of Employees who got bonus of
+        {{10000 | currency : 'INR'}} for not taking Leave from last one month</h3>
+        <div class="col-md-12">
+          <table class="table table-hover shadow-lg table-striped" id="tab">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">Employee Id</th>
+              <th scope="col">First Name</th>
+              <th scope="col">Last Name</th>
+            </tr>
+          </thead>
+          <tbody *ngFor="let employee of Employee">
+            <tr *ngIf="employee.availableLeave > 23">
+              <td>{{employee.eid}}</td>
+              <td>{{employee.fname}}</td>
+              <td>{{employee.lname}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  
+</body>
+
+</html>
