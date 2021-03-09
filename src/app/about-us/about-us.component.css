@@ -1,0 +1,18 @@
+body{
+    background-image: url("/assets/img/ice2.jpg");
+}
+
+#aboutus{
+    text-align: center;
+  text-justify: inter-word;
+  width:75%;
+  margin-left: 12%;
+  border-radius: 30px;
+
+}
+#help{
+
+    text-align: center;
+    text-justify: inter-word;
+
+}
