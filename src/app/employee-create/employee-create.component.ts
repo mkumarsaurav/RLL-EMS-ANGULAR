@@ -9,26 +9,39 @@ import { RestApiService } from '../services/rest-api.service';
 })
 export class EmployeeCreateComponent implements OnInit {
 
-  // currentUserId: any;
-  // currentUserName: any;
+  currentUserId: any;
+  currentUserName: any;
+  currentRole: any;
 
-  @Input() employeeDetails = { eid: '', fname: '', lname: '', age: '', gender: 'F', email: '', username: '', password: '', role: '', phoneNumber: '', address: '' }
+  @Input() employeeDetails = { eid: '', fname: '', lname: '', age: '', gender: 'MALE', email: '', username: '', password: '', role: 'EMPLOYEE', phoneNumber: '', address: '' }
+
   constructor(
+
     public restApi: RestApiService,
     public router: Router
   ) { }
 
   ngOnInit() {
-    // this.currentUserId = sessionStorage.getItem('email');
-    // this.currentUserName = sessionStorage.getItem('fname');
-    // if (this.currentUserId === null) {
-    //   this.router.navigate(['login']);
-    // }
+
+    this.currentUserId = sessionStorage.getItem('email');
+    this.currentUserName = sessionStorage.getItem('fname');
+    this.currentRole = sessionStorage.getItem('role');
+
+    if (this.currentUserId === null) {
+      this.router.navigate(['login']);
+    }
+
+    if (this.currentRole === "EMPLOYEE") {
+      this.router.navigate(['login']);
+    }
   }
 
   addEmployee() {
-    this.restApi.createEmployee(this.employeeDetails).subscribe((data: {}) => {
-      this.router.navigate(['/employeeDetails'])
-    })
+
+    if (window.confirm("Are you sure, you want add? ")) {
+      this.restApi.createEmployee(this.employeeDetails).subscribe((data: {}) => {
+        this.router.navigate(['managerHome/2/2'])
+      })
+    }
   }
 }

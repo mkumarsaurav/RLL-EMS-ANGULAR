@@ -1,2 +1,43 @@
-<p>employee-home works!</p>
-<button type="button" class="btn btn-secondary btn-lg" routerLink="/applyLeave" routerLinkActive="Active">Apply Leave</button>
+<html>
+<title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</title>
+
+<body>
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+
+      <h2 class="logo mr-auto"><a>WELCOME &nbsp;{{currentEmployeeName}}<br>
+          <h6>Last Logged In : {{lastLoginTime | date}}&nbsp;|&nbsp;{{lastLoginTime | date : 'shortTime'}}</h6>
+        </a></h2><br>
+
+      <nav class="nav-menu d-none d-lg-block">
+        <ul>
+          <li class="active"><a routerLink="/employeeHome" routerLinkActive="active">Home</a></li>
+          <li><a (click)="logout()">Logout</a></li>
+
+        </ul>
+      </nav><!-- .nav-menu -->
+
+    </div>
+  </header><!-- End Header -->
+  <br><br><br><br><br>
+  <hr style="color: black;">
+
+
+  <div class="">
+
+
+    <nav id="whitebg" class="nav-menu d-none d-lg-block sticky">
+      <ul id="new">
+        <li><a (click)="viewLeave()">View Leave</a></li>
+        <li><a (click)="applyLeave()">Apply Leave</a></li>
+      </ul>
+    </nav>
+    <div>
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</body>
+
+</html>

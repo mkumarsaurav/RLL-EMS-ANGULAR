@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { RestApiService } from '../services/rest-api.service';
+
 
 @Component({
   selector: 'app-employee-home',
@@ -8,17 +10,53 @@ import { Router } from '@angular/router';
 })
 export class EmployeeHomeComponent implements OnInit {
 
-  constructor(public router: Router) { }
+  constructor(public restApi: RestApiService,
+    private aroute: ActivatedRoute, private router: Router) { }
 
-  currentUserId: any;
-  currentUserName: any;
+  currentEmployeeId: any;
+  currentEmployeeName: any;
+  currentEmployeeRole: any;
+  currentEmployeeEmail: any;
+  lastLoginTime: any;
+  currentEmployeeAvailableLeave:any;
 
   ngOnInit(): void {
-    this.currentUserId = sessionStorage.getItem('email');
-    this.currentUserName = sessionStorage.getItem('fname');
-    if (this.currentUserId === null) {
+
+    this.currentEmployeeId = sessionStorage.getItem('eid');
+    this.currentEmployeeName = sessionStorage.getItem('fname');
+    this.currentEmployeeRole = sessionStorage.getItem('role');
+    this.currentEmployeeEmail = sessionStorage.getItem('email');
+    this.currentEmployeeAvailableLeave=sessionStorage.getItem('availableLeave');
+    this.lastLoginTime = sessionStorage.getItem('lastLoginTime');
+
+    if (this.currentEmployeeEmail === null) {
       this.router.navigate(['login']);
     }
+
+    if (this.currentEmployeeRole === "MANAGER") {
+      this.router.navigate(['login']);
+    }
+
+    if (this.lastLoginTime == null) {
+      this.lastLoginTime = "First Login";
+    }
+
   }
 
+  viewLeave() {
+
+    this.router.navigate(['1'], { relativeTo: this.aroute });
+  }
+
+  applyLeave() {
+
+    this.router.navigate(['2'], { relativeTo: this.aroute });
+  }
+
+  logout() {
+    if (window.confirm("Are you sure, you want to logout? ")) {
+      sessionStorage.removeItem('email');
+      this.router.navigate(['home']);
+    }
+  }
 }

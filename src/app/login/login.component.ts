@@ -13,12 +13,11 @@ import { RestApiService } from '../services/rest-api.service';
 })
 export class LoginComponent implements OnInit {
 
-  public username: any;
+  public email: any;
   public password: any;
   public user: any = [];
   sessionStorage: any;
 
-  public check: any;
   constructor(public restApi: RestApiService,
     public actRoute: ActivatedRoute,
     public router: Router) { }
@@ -27,36 +26,37 @@ export class LoginComponent implements OnInit {
 
   }
 
-  Login(username: string, password: string) {
-    this.restApi.authenticate(this.username, this.password).subscribe((data: {}) => {
+  Login() {
+
+    this.restApi.authenticate(this.email, this.password).subscribe((data: {}) => {
       this.user = data;
+     
+      if (this.user[0] === "MANAGER") {
 
-      if (this.user[0] == "Manager") {
-        alert("hii" + this.user[0]);
-        alert("email" + this.user[1]);
-       sessionStorage.setItem('email', this.user[1]);
-       //alert("1st Lenght" + sessionStorage.length);
-       sessionStorage.setItem('fname', this.user[2]);
-       //alert("2nd length" + sessionStorage.length);
+        sessionStorage.setItem('role', this.user[0]);
+        sessionStorage.setItem('email', this.user[1]);
+        sessionStorage.setItem('fname', this.user[2]);
+        sessionStorage.setItem('lastLoginTime', this.user[3]);
+        sessionStorage.setItem('eid', this.user[4]);
+        //sessionStorage.setItem('availableLeave',this.user[5]);
         this.router.navigate(['managerHome']);
+        alert("Login Success!!\nWelcome "+this.user[2]);
       }
-      else if (this.user[0] == "Employee") {
-        alert("hii" + this.user[0]);
-        alert("email" + this.user[1]);
-    //    sessionStorage.setItem('email', this.user[1]);
-    //    alert("1st Lenght" + sessionStorage.length);
-    //    sessionStorage.setItem('fname', this.user[2]);
+      else if (this.user[0] === "EMPLOYEE") {
+
+        sessionStorage.setItem('role', this.user[0]);
+        sessionStorage.setItem('email', this.user[1]);
+        sessionStorage.setItem('fname', this.user[2]);
+        sessionStorage.setItem('lastLoginTime', this.user[3]);
+        sessionStorage.setItem('eid', this.user[4]);
+        sessionStorage.setItem('availableLeave',this.user[5]);
         this.router.navigate(['employeeHome']);
-
-      } else {
-
+        alert("Login Success!!\Welcome "+this.user[2]);
+      }
+      else {
 
         this.router.navigate(['login']);
-
-
       }
     })
   }
-
-
 }

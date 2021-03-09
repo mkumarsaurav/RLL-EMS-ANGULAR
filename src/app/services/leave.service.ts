@@ -5,13 +5,14 @@ import { Injectable } from '@angular/core';
 })
 export class LeaveService {
 
-  constructor() { }
+	constructor() { }
 
-  public leaveId : any;
-	public leaveType : any;
-	public leaveStatus : any;
-	public leaveComment : any;
-	public toDate : any;
-	public fromDate : any;
-	public  eid : any;
+	public leaveId: any;
+	public leaveType: any;
+	public leaveStatus: any;
+	public leaveComment: any;
+	public toDate: any;
+	public fromDate: any;
+	public eid: any;
+	public action : any;
 }

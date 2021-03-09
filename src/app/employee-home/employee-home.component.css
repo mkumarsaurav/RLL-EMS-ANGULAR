@@ -1,0 +1,37 @@
+h3 {
+   color: rgb(141, 106, 54);
+   margin-left: 40%;
+}
+
+#fourth {
+   color: blanchedalmond;
+}
+
+#right {
+   float: right;
+   margin-left: 950%;
+}
+body{
+
+   background-image: url("/assets/img/emp2.jpg");
+   background-size: cover;
+   background-repeat: no-repeat;
+   height: 800px;
+}
+
+#home
+{
+   border-radius: 15px;
+}
+
+#header{
+   background-color: white;
+}
+
+#whitebg{
+   background-color:white;
+   
+}
+#new{
+   margin-left:74.4%;
+}

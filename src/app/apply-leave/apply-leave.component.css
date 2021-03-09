@@ -1,0 +1,60 @@
+body{
+
+   background: transparent;
+}
+
+.div2 {
+    background-image: url("/assets/img/ice2.jpg");
+    width: 38%;
+    height: 1%;
+    top: 10px;
+    border-radius: 30px;
+    margin: auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+h3{
+  
+    padding-top: 5%;
+    text-decoration-line:underline;
+  }
+  h6{
+      margin-left: 26%;
+  }
+
+#create{
+
+    border-radius:50px;
+    width: 50%;
+    margin-left: 26%;
+    margin-top: 47%;
+  }
+
+#sec{
+
+   
+      padding-bottom: 5%;
+      padding-top: 10%;
+  }
+.emp
+{
+ 
+    margin-left: 26%;
+    float: left;
+      
+}
+.left{
+    margin-left: 7%;
+    float: left;
+  }
+.right{
+  margin-right: 7%;
+    float: right;
+  }
+
+  .selLev{
+      float: left;
+      margin-left: 37%;
+  }
+  

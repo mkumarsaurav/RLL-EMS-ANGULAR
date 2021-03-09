@@ -1,0 +1,13 @@
+#tab{
+    background-color:white;
+    border-radius: 30px;
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+}
+.action{
+    border-radius:50px;
+}
+
+#act{
+    text-align: center;
+}

@@ -1,0 +1,43 @@
+body{
+  background-image: url("/assets/img/manager.jpg");
+}
+.div2 {
+
+  width: 50%;
+  height: 1%;
+  top: 10px;
+  border-radius: 30px;
+  margin: auto;
+  background-color:burlywood;
+  opacity: 0.8;
+}
+
+.div3{
+  background-image: url("/assests/img/login.jpg");
+  background-repeat: no-repeat;
+        background-size: cover;
+
+}
+
+#create{
+
+  border-radius:50px;
+  width: 50%;
+  margin-left: 22%;
+}
+
+#sec{
+
+    padding-bottom: 5%;
+    padding-top: 3%;
+}
+
+
+table {
+  border-collapse: separate;
+  border-spacing: 50px 0;
+}
+
+td {
+  padding: 10px 0;
+}

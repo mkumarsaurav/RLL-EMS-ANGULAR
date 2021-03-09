@@ -1,0 +1,41 @@
+body{
+    height: 800px;
+   
+    }
+    
+    .div2 {
+    
+        width: 40%;
+        height: 1%;
+        top: 10px;
+        border-radius: 30px;
+        margin: auto;
+        background-image: url("/assets/img/ice.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    .bgcheck{
+        background-image: url("/assets/img/manager.jpg");
+        background-size: cover;
+    }
+    
+    
+    #create{
+    
+        border-radius:50px;
+        width: 50%;
+        margin-left: 22%;
+      }
+    
+    #sec{
+    
+          padding-bottom: 5%;
+          padding-top: 3%;
+      }
+      input[type=text]{
+          margin-left: 15%;
+    width:70%;
+}
+    
+    
+      

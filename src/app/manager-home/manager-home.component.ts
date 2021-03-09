@@ -8,25 +8,56 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class ManagerHomeComponent implements OnInit {
 
-  constructor(private aroute : ActivatedRoute, private router: Router) { }
-  currentUserId: any;
-  currentUserName: any;
+  currentEmployeeId: any;
+  currentEmployeeName: any;
+  currentEmployeeRole: any;
+  currentEmployeeEmail: any;
+  lastLoginTime: any;
+
+  constructor(private aroute: ActivatedRoute, private router: Router) { }
+
   ngOnInit(): void {
-    this.currentUserId = sessionStorage.getItem('email');
-    this.currentUserName = sessionStorage.getItem('fname');
-    // if (this.currentUserId === null) {
-    //   this.router.navigate(['login']);
-    // }
+
+    this.currentEmployeeId = sessionStorage.getItem('eid');
+    this.currentEmployeeName = sessionStorage.getItem('fname');
+    this.currentEmployeeRole = sessionStorage.getItem('role');
+    this.currentEmployeeEmail = sessionStorage.getItem('email');
+    this.lastLoginTime = sessionStorage.getItem('lastLoginTime');
+
+    if (this.currentEmployeeEmail === null) {
+      this.router.navigate(['login']);
+    }
+
+    if (this.currentEmployeeRole === "EMPLOYEE") {
+      this.router.navigate(['login']);
+    }
+
+    if (this.lastLoginTime === null) {
+      this.lastLoginTime = "First Login";
+    }
+
+    
   }
 
-  addEmployee(){
-    this.router.navigate(['createEmployee'],{relativeTo :this.aroute});
-}
-getEmployees(){
-  this.router.navigate(['employeeDetails'],{relativeTo :this.aroute});
-}
-getLeave(){
-  this.router.navigate(['getLeave'],{relativeTo :this.aroute});
-}
+  addEmployee() {
+
+    this.router.navigate(['1'], { relativeTo: this.aroute });
+  }
+
+  getEmployees() {
+
+    this.router.navigate(['2'], { relativeTo: this.aroute });
+  }
+
+  getLeave() {
+
+    this.router.navigate(['3'], { relativeTo: this.aroute });
+  }
+
+  logout() {
+
+    sessionStorage.removeItem('email');
+    this.router.navigate(['home']);
+  }
 
 }

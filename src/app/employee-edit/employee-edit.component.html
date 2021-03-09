@@ -1,35 +1,60 @@
-<div class="container custom-container">
-  <div class="col-md-12">
 
-    <h3 class="mb-3 text-center">Update Employee</h3>
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
 
-    <div class="form-group">
-      <input type="text" [(ngModel)]="employeeData[0].fname" class="form-control" placeholder="First Name">
+      <h2 class="logo mr-auto"><a>Edit Employee Details</a></h2><br>
+
+      <nav class="nav-menu d-none d-lg-block">
+        <ul>
+          <li class="active"><a routerLink="/managerHome/1/2" routerLinkActive="active">Go Back</a></li>
+
+        </ul>
+      </nav><!-- .nav-menu -->
+
     </div>
-    <div class="form-group">
-      <input type="text" [(ngModel)]="employeeData[0].lname" class="form-control" placeholder="Last Name">
-    </div>
-    <div class="form-group">
-      <input type="text" [(ngModel)]="employeeData[0].age" class="form-control" placeholder="Age">
-    </div>
-    <div class="form-group">
-      <input type="text" [(ngModel)]="employeeData[0].gender" class="form-control" placeholder="Gender">
-    </div>
-    <div class="form-group">
-      <input type="text" [(ngModel)]="employeeData[0].email" class="form-control" placeholder="Email">
-    </div>
-    <div class="form-group">
-      <input type="text" [(ngModel)]="employeeData[0].phoneNumber" class="form-control" placeholder="phoneNumber">
-    </div>
-    <div class="form-group">
-      <input type="text" [(ngModel)]="employeeData[0].address" class="form-control" placeholder="address">
-    </div>
+  </header><!-- End Header -->
+  <div class="bgcheck">
+  <br><br><br><br><br>
+  <hr style="color: black;">
+  <br>
+  <br>
+  
+  <div class="div2 shadow-lg">
 
 
+    <div id="divv" class="container custom-container">
+      <div class="div3"><br>
+        <h3 class="mb-3 text-center"><u>Update Employee</u></h3>
+<hr>
+        <div class="form-group">
+          <input type="text" [(ngModel)]="employeeData[0].fname" class="form-control" placeholder="First Name">
+        </div>
+        <div class="form-group">
+          <input type="text" [(ngModel)]="employeeData[0].lname" class="form-control" placeholder="Last Name">
+        </div>
+        <div class="form-group">
+          <input type="text" [(ngModel)]="employeeData[0].age" class="form-control" placeholder="Age">
+        </div>
+        <div class="form-group">
+          <input type="text" [(ngModel)]="employeeData[0].gender" class="form-control" placeholder="Gender">
+        </div>
+        <div class="form-group">
+          <input type="text" [(ngModel)]="employeeData[0].email" class="form-control" placeholder="Email">
+        </div>
+        <div class="form-group">
+          <input type="text" [(ngModel)]="employeeData[0].phoneNumber" class="form-control" placeholder="phoneNumber">
+        </div>
+        <div class="form-group">
+          <input type="text" [(ngModel)]="employeeData[0].address" class="form-control" placeholder="address">
+        </div>
+        <div id="sec" class="form-group">
 
-    <div class="form-group">
-      <button class="btn btn-success btn-lg btn-block" (click)="updateEmployee()">Update Employee</button>
+          <button id="create" class="btn btn-primary  btn-block" (click)="updateEmployee()">Update
+            Employee</button>
+            
+        </div>
+      </div>
     </div>
-
   </div>
+  <br><br><br>
 </div>

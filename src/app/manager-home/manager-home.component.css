@@ -1,0 +1,38 @@
+h3 {
+    font-family: 'Courier New', Courier, monospace;
+   color: rgb(141, 106, 54);
+   margin-left: 40%;
+}
+
+#fourth {
+   color: blanchedalmond;
+   font-family: 'Courier New', Courier, monospace;
+}
+
+#right {
+   float: right;
+   margin-left: 950%;
+}
+body{
+   background-image: url("/assets/img/manager.jpg");
+   font-family: 'Courier New', Courier, monospace;
+   height: 1200px;
+}
+
+#home
+{
+   
+   border-radius: 15px;
+}
+
+#header{
+   background-color: white;
+}
+
+#whitebg{
+   background-color:white;
+   
+}
+#new{
+   margin-left:62.3%;
+}

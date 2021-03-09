@@ -1,15 +1,43 @@
-<h2>Welcome : {{currentUserName}}</h2>
-<nav class="navbar navbar-dark bg-dark">
+<html>
+<title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</title>
 
+<body>
 
-    <button type="button" class="btn btn-primary btn-lg" (click)="addEmployee()">ADD
-        EMPLOYEE</button>
-    <button type="button" class="btn btn-secondary btn-lg" (click)="getEmployees()">View
-        Employee Details</button>
-    <button type="button" class="btn btn-secondary btn-lg" (click)="getLeave()" routerLink="getLeave" routerLinkActive="Active">View Leave
-        Details</button>
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+
+      <h2 class="logo mr-auto"><a>WELCOME &nbsp;{{currentEmployeeName}}<br><h6>Last Logged In : {{lastLoginTime | date}}&nbsp;|&nbsp;{{lastLoginTime | date : 'shortTime'}}</h6></a></h2><br>
+      
+      <nav class="nav-menu d-none d-lg-block">
+        <ul>
+          <li class="active"><a routerLink="/managerHome" routerLinkActive="active">Home</a></li>
+          <li><a (click)="logout()">Logout</a></li>
+
+        </ul>
+      </nav><!-- .nav-menu -->
+
+    </div>
+  </header><!-- End Header -->
+  <br><br><br><br><br>
+  <hr style="color: black;">
+
+  <div class="">
     
-</nav>
-<div>
-<router-outlet></router-outlet>
-</div>
+ 
+    <nav id="whitebg" class="nav-menu d-none d-lg-block sticky">
+      <ul id="new">
+        <li><a (click)="addEmployee()">Add Employee</a></li>
+        <li><a (click)="getEmployees()">View Employee</a></li>
+        <li><a (click)="getLeave()" >View Leave</a></li>
+      </ul>
+    </nav>
+    <div>
+      <!-- <router-outlet></router-outlet> -->
+    </div>
+  </div>
+  <router-outlet></router-outlet>
+</body>
+
+</html>

@@ -47,7 +47,4 @@ Thumbs.db
 
 app/services/employee-login.service.spec.ts
 app/services/employee-login.service.ts
-assets/css/
-assets/img/
-assets/js/
-assets/vendor/
+src/assets/

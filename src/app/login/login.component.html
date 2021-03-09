@@ -1,23 +1,53 @@
-<div class="wrapper fadeInDown">
-  <div class=" first" id="formContent">
+<html>
+<title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</title>
 
-    <div class="fadeIn first">
+<body>
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo mr-auto"><a>VAABS<span>.</span></a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo mr-auto"><img src="assets/img/logo.png" alt=""></a>-->
+
+      <nav class="nav-menu d-none d-lg-block">
+        <ul>
+          <li class="active"><a routerLink="/home" routerLinkActive="active">Home</a></li>
+          <li><a routerLink="/aboutus" routerLinkActive="active">About</a></li>
+          <li><a >Team</a></li>
+          
+          <li><a>Contact</a></li>
+
+        </ul>
+      </nav><!-- .nav-menu -->
 
     </div>
+  </header><!-- End Header -->
+  <br><br><br><br><br>
 
-    <div>
-      User Name : <input type="text" id="login" class="fadeIn second" name="username" [(ngModel)]="username">
-      Password : <input type="text" id="password" class="fadeIn third" name="password" [(ngModel)]="password">
+  <div class="sticky">
+    <div class="wrapper fadeInDown ">
+      <div class=" first logg" id="formContent">
+        <div class="fadeIn first">
+          <h3>Enter Your Credentials</h3>
+        </div>
+        <div>
+         <strong> Email :</strong><br> <input type="text" id="login" class="fadeIn second" name="email" [(ngModel)]="email">
+         <strong> Password </strong> : <br><input type="password" id="password" class="fadeIn third" name="password"
+            [(ngModel)]="password">
+        </div><br>
+        <button (click)="Login()" class="btn btn-primary">Login</button>
+        <br><br>
+        <div id="formFooter">
+          <a class="underlineHover"  onclick="alert('Contact Your Manager')" routerlink="/login" routerlinkactive="active" ><strong>Forgot Password?</strong></a>
+          
+        </div>
+
+      </div>
     </div>
-    <button (click)="Login(username,password)" class="btn btn-success">
-      Login
-    </button>
-
-
-    <div id="formFooter">
-      <a class="underlineHover" href="#" onclick="alert('Contact Your Manager')">Forgot Password?</a>
-    </div>
-
+    <router-outlet></router-outlet>
   </div>
-</div>
-<router-outlet></router-outlet>
+</body>
+
+</html>
