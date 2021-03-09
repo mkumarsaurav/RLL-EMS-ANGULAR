@@ -1,0 +1,48 @@
+
+<div class="container custom-container-2">
+  <div class="no-data text-center" *ngIf="leave.length == 0">
+    <div class="wrapper fadeInDown">
+      <div class=" first" id="formContent">
+        <div class="fadeIn first">
+          <h3>Hurrah!!</h3>
+        </div>
+        <div>
+          <h4>You have not Applied any leave</h4>
+        </div>
+        <div>
+          <br><br>
+          <button class="btn btn-outline-primary" routerLink="/employeeHome/1/2" routerLinkActive="active">Apply Leave</button>
+          <br><br><br>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  <div *ngIf="leave.length !== 0">
+    <div class="col-md-12">
+      <br><br>
+      <table class="table table-hover shadow-lg table-striped" id="tab">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Leave Type</th>
+            <th scope="col">Leave applied from </th>
+            <th scope="col">Leave applied till Date</th>
+            <th scope="col">Leave Status</th>
+            <th scope="col" id="act">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let leave of leave">
+            <td>{{leave.leaveType}}</td>
+            <td>{{leave.fromDate | date}}</td>
+            <td>{{leave.toDate | date}}</td>
+            <td>{{leave.leaveStatus}}</td>
+            <td>
+              <button class="action btn btn-danger" (click)="cancelLeave(leave.leaveId)">Cancel Leave</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
